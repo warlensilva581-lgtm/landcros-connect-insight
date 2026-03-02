@@ -1,0 +1,5 @@
+{
+  "name": "LANDCROS Connect Insight",
+  "description": "Plataforma de inspeção técnica e monitoramento para equipamentos Hitachi e LANDCROS.",
+  "requestFramePermissions": ["camera"]
+}
