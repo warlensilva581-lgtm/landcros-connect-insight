@@ -835,6 +835,23 @@ useEffect(() => {
       alert('A imagem está travada. Desbloqueie para poder excluir.');
       return;
     }
+    {isAdmin && (
+  <button
+    onClick={() => {
+      const layoutFinal = {
+        positions: customPositions,
+        configs: imgConfigs,
+        images: diagramImages
+      };
+      navigator.clipboard.writeText(JSON.stringify(layoutFinal, null, 2));
+      alert("LAYOUT COPIADO! Agora vá ao topo do código, cole no MASTER_DATA e mude a MASTER_VERSION.");
+    }}
+    className="w-full flex items-center justify-center gap-2 bg-orange-600 text-white p-3 rounded-xl font-bold mt-2"
+  >
+    <Copy size={20} />
+    <span>Copiar Configuração Mestre</span>
+  </button>
+)}
     setDiagramImages(prev => ({ ...prev, [selectedCategory]: null }));
     setImgConfigs(prev => ({ ...prev, [selectedCategory]: { scale: 1, x: 0, y: 0 } }));
     setCustomPositions(prev => {
