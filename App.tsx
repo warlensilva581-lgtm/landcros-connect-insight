@@ -70,6 +70,22 @@ interface InspectionInfo {
   date: string;
   conclusion: string;
 }
+// ==========================================
+//   PAINEL DE CONTROLE MESTRE (ADICIONE AQUI)
+// ==========================================
+
+// 1. MUDE ESTA VERSÃO PARA FORÇAR O CELULAR DE TODOS A ATUALIZAR
+const MASTER_VERSION = "1.0.1"; 
+
+// 2. AQUI VOCÊ COLARÁ OS DADOS QUE O BOTÃO "EXPORTAR" VAI GERAR
+const MASTER_DATA: any = {
+  positions: {}, // As bolinhas (números) entram aqui
+  configs: {},   // O zoom e a posição da imagem entram aqui
+  images: {}     // Os links das fotos entram aqui
+};
+
+// ==========================================
+
 
 const TRANSLATIONS = {
   en: {
