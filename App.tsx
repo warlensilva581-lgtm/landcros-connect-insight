@@ -324,7 +324,17 @@ export default function App() {
     const saved = localStorage.getItem('clonedParts');
     return saved ? JSON.parse(saved) : {};
   });
-
+// COLE ESTE BLOCO EXATAMENTE AQUI (LINHA 178):
+useEffect(() => {
+  const savedVer = localStorage.getItem('app_master_version');
+  if (savedVer !== MASTER_VERSION) {
+    localStorage.removeItem('customPositions');
+    localStorage.removeItem('imgConfigs');
+    localStorage.removeItem('diagramImages');
+    localStorage.setItem('app_master_version', MASTER_VERSION);
+    window.location.reload();
+  }
+}, []);
   // Save to localStorage whenever state changes
   useEffect(() => {
     localStorage.setItem('savedConfigs', JSON.stringify(savedConfigs));
