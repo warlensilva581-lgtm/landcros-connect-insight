@@ -324,6 +324,17 @@ export default function App() {
     const saved = localStorage.getItem('clonedParts');
     return saved ? JSON.parse(saved) : {};
   });
+  // COLA ISSO AQUI:
+useEffect(() => {
+  const savedVer = localStorage.getItem('app_master_version');
+  if (savedVer !== MASTER_VERSION) {
+    localStorage.removeItem('customPositions');
+    localStorage.removeItem('imgConfigs');
+    localStorage.removeItem('diagramImages');
+    localStorage.setItem('app_master_version', MASTER_VERSION);
+    window.location.reload();
+  }
+}, []);
 // COLA ISSO AQUI:
 useEffect(() => {
   const savedVer = localStorage.getItem('app_master_version');
