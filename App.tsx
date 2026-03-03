@@ -573,7 +573,7 @@ export default function App() {
     alert('Configuração Mestre salva para esta categoria!');
   };
 
-  const currentImg = diagramImages[selectedCategory] || null;
+  const currentImg = diagramImages[selectedCategory] || `/${selectedCategory}.png`;
   const currentConfig = imgConfigs[selectedCategory] || savedConfigs[selectedCategory] || { scale: 1, x: 0, y: 0 };
   const currentFilters = imgFilters[selectedCategory] || { brightness: 100, contrast: 100, grayscale: 0 };
   const currentCustomPos = customPositions[selectedCategory] || {};
