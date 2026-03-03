@@ -599,11 +599,12 @@ useEffect(() => {
     alert('Configuração Mestre salva para esta categoria!');
   };
 
-  const currentImg = diagramImages[selectedCategory] || `/${selectedCategory}.png`;
-  const currentConfig = imgConfigs[selectedCategory] || savedConfigs[selectedCategory] || { scale: 1, x: 0, y: 0 };
+  // LINHA 531: O App agora obedece primeiro ao que você escrever no MASTER_DATA
+  const currentImg = MASTER_DATA.images[selectedCategory] || diagramImages[selectedCategory] || `/${selectedCategory}.png`;
+  const currentConfig = MASTER_DATA.configs[selectedCategory] || imgConfigs[selectedCategory] || savedConfigs[selectedCategory] || { scale: 1, x: 0, y: 0 };
   const currentFilters = imgFilters[selectedCategory] || { brightness: 100, contrast: 100, grayscale: 0 };
-  const currentCustomPos = customPositions[selectedCategory] || {};
-
+  const currentCustomPos = MASTER_DATA.positions[selectedCategory] || customPositions[selectedCategory] || {};
+  
   useEffect(() => {
     localStorage.setItem('customCategories', JSON.stringify(customCategories));
   }, [customCategories]);
