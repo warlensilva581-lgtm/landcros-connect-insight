@@ -1,5 +1,7 @@
 {
-  "name": "LANDCROS Connect Insight",
-  "description": "Plataforma de inspeção técnica e monitoramento para equipamentos Hitachi e LANDCROS.",
-  "requestFramePermissions": ["camera"]
+  "name": "Landcros Connect Insight - Image Editor",
+  "description": "Ferramenta de catálogo de peças com comandos de manipular imagem: aumentar, diminuir, rotacionar e deslocar.",
+  "requestFramePermissions": [
+    "camera"
+  ]
 }
